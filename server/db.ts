@@ -1,4 +1,5 @@
 import { eq } from "drizzle-orm";
+import { cartItems, orderItems, orders, products } from "../drizzle/schema";
 import { drizzle } from "drizzle-orm/mysql2";
 import { InsertUser, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
@@ -89,4 +90,48 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+/**
+ * Get all products
+ */
+export async function getAllProducts() {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(products);
+}
+
+/**
+ * Get product by ID
+ */
+export async function getProductById(productId: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(products).where(eq(products.id, productId)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+/**
+ * Get user's cart items
+ */
+export async function getUserCartItems(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(cartItems).where(eq(cartItems.userId, userId));
+}
+
+/**
+ * Get user's orders
+ */
+export async function getUserOrders(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(orders).where(eq(orders.userId, userId));
+}
+
+/**
+ * Get order items by order ID
+ */
+export async function getOrderItems(orderId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db.select().from(orderItems).where(eq(orderItems.orderId, orderId));
+}

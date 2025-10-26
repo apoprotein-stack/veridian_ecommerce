@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import { decimal, int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -25,4 +25,67 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// TODO: Add your tables here
+/**
+ * Products table - iTrust 保健食品商品
+ */
+export const products = mysqlTable("products", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 255 }).notNull(),
+  description: text("description"),
+  price: decimal("price", { precision: 10, scale: 2 }).notNull(),
+  image: varchar("image", { length: 500 }),
+  category: varchar("category", { length: 100 }),
+  stock: int("stock").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Product = typeof products.$inferSelect;
+export type InsertProduct = typeof products.$inferInsert;
+
+/**
+ * Cart items table - 購物車項目
+ */
+export const cartItems = mysqlTable("cart_items", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  productId: int("productId").notNull(),
+  quantity: int("quantity").default(1).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type CartItem = typeof cartItems.$inferSelect;
+export type InsertCartItem = typeof cartItems.$inferInsert;
+
+/**
+ * Orders table - 訂單
+ */
+export const orders = mysqlTable("orders", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  totalPrice: decimal("totalPrice", { precision: 10, scale: 2 }).notNull(),
+  status: mysqlEnum("status", ["pending", "completed", "cancelled"]).default("pending").notNull(),
+  shippingAddress: text("shippingAddress"),
+  shippingMethod: varchar("shippingMethod", { length: 100 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Order = typeof orders.$inferSelect;
+export type InsertOrder = typeof orders.$inferInsert;
+
+/**
+ * Order items table - 訂單項目
+ */
+export const orderItems = mysqlTable("order_items", {
+  id: int("id").autoincrement().primaryKey(),
+  orderId: int("orderId").notNull(),
+  productId: int("productId").notNull(),
+  quantity: int("quantity").notNull(),
+  price: decimal("price", { precision: 10, scale: 2 }).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type OrderItem = typeof orderItems.$inferSelect;
+export type InsertOrderItem = typeof orderItems.$inferInsert;

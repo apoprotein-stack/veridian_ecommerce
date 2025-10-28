@@ -1,0 +1,9 @@
+{
+  "query": "DELETE FROM products;\n\nINSERT INTO products (name, description, price, category, stock) VALUES\n('銀寶常青活力沖泡飲', '專為銀髮族設計的活力沖泡飲，含豐富營養成分，幫助維持活力與健康。溫和配方，易於吸收。', '980', 's-Trust 銀髮族主理', 50),\n('精力馬卡沖泡飲', '男性活力的完美夥伴，天然馬卡精華，提升精力與耐力。快速沖泡，方便飲用。', '1050', 'm-Trust 男性主理', 45),\n('美妍膠原蛋白', '女性美麗的秘密武器，高效膠原蛋白配方，支持肌膚彈性與光澤。內在修復，外在綻放。', '1200', 'w-Trust 女力主理', 40),\n('蔓越莓清新私密凝露', '女性私密護理的專業選擇，天然蔓越莓精華，溫和配方。呵護妳的健康與自信。', '890', 'w-Trust 女力主理', 35),\n('運動活力能量棒', '運動愛好者的必備夥伴，快速補充能量與營養。便攜式設計，隨時隨地享受活力。', '680', 'g-Trust 運動主理', 60),\n('全家人益生菌', '全家健康的守護者，平衡腸道菌叢，支持消化與免疫。適合全家人長期食用。', '920', 'f-Trust 家人主理', 55);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4KZ7fUnndvPR2k8.root --database nneXUHmDme2nniBTgFLSdf --execute DELETE FROM products;\n\nINSERT INTO products (name, description, price, category, stock) VALUES\n('銀寶常青活力沖泡飲', '專為銀髮族設計的活力沖泡飲，含豐富營養成分，幫助維持活力與健康。溫和配方，易於吸收。', '980', 's-Trust 銀髮族主理', 50),\n('精力馬卡沖泡飲', '男性活力的完美夥伴，天然馬卡精華，提升精力與耐力。快速沖泡，方便飲用。', '1050', 'm-Trust 男性主理', 45),\n('美妍膠原蛋白', '女性美麗的秘密武器，高效膠原蛋白配方，支持肌膚彈性與光澤。內在修復，外在綻放。', '1200', 'w-Trust 女力主理', 40),\n('蔓越莓清新私密凝露', '女性私密護理的專業選擇，天然蔓越莓精華，溫和配方。呵護妳的健康與自信。', '890', 'w-Trust 女力主理', 35),\n('運動活力能量棒', '運動愛好者的必備夥伴，快速補充能量與營養。便攜式設計，隨時隨地享受活力。', '680', 'g-Trust 運動主理', 60),\n('全家人益生菌', '全家健康的守護者，平衡腸道菌叢，支持消化與免疫。適合全家人長期食用。', '920', 'f-Trust 家人主理', 55);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1924
+}

@@ -96,44 +96,65 @@ export default function Story() {
             </div>
           </section>
 
-          {/* Products Section */}
+          {/* Product Lines Section */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">💚 iTrust 產品系列</h2>
             
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-[#f0fffe] p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">美妍膠原蛋白</h3>
-                <p className="text-gray-600">
-                  內在修復的基礎，支持肌膚彈性與光澤，讓妳從內而外散發光采。
+            <div className="space-y-6">
+              {/* s-Trust */}
+              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">👴 s-Trust: 銀髮族主理</h3>
+                <p className="text-gray-700 mb-3">
+                  專為銀髮族設計的健康活力方案，溫和配方易於吸收。
                 </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• 銀寶常青活力沖泡飲 - 維持活力與健康的完美選擇</li>
+                </ul>
               </div>
 
-              <div className="bg-[#f0fffe] p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">全家福益生菌</h3>
-                <p className="text-gray-600">
-                  腸道健康的守護者，平衡體內菌叢，支持消化與免疫系統。
+              {/* m-Trust */}
+              <div className="bg-orange-50 p-6 rounded-lg border border-orange-200">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">💪 m-Trust: 男性主理</h3>
+                <p className="text-gray-700 mb-3">
+                  男性活力與耐力的完美選擇，天然配方快速見效。
                 </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• 精力馬卡沖泡飲 - 提升精力與耐力的天然夥伴</li>
+                </ul>
               </div>
 
-              <div className="bg-[#f0fffe] p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">精力瑪卡</h3>
-                <p className="text-gray-600">
-                  喚醒身體的能量中心，提升活力與耐力，重拾生命的節奏。
+              {/* w-Trust */}
+              <div className="bg-pink-50 p-6 rounded-lg border border-pink-200">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">👩 w-Trust: 女力主理</h3>
+                <p className="text-gray-700 mb-3">
+                  女性美麗與健康的專業護理，內在修復外在綻放。
                 </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• 美妍膠原蛋白 - 支持肌膚彈性與光澤</li>
+                  <li>• 蔓越莓清新私密凝露 - 女性私密護理的專業選擇</li>
+                </ul>
               </div>
 
-              <div className="bg-[#f0fffe] p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">銀保常青養生飲</h3>
-                <p className="text-gray-600">
-                  溫和的滋補方案，支持整體健康與長期活力。
+              {/* g-Trust */}
+              <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">⚡ g-Trust: 運動主理</h3>
+                <p className="text-gray-700 mb-3">
+                  運動愛好者的能量補給站，便攜式設計隨時享受活力。
                 </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• 運動活力能量棒 - 快速補充能量與營養</li>
+                </ul>
               </div>
 
-              <div className="bg-[#f0fffe] p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">運動能量活力棒</h3>
-                <p className="text-gray-600">
-                  運動前後的完美夥伴，提供能量補給與肌肉支持。
+              {/* f-Trust */}
+              <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">👨‍👩‍👧‍👦 f-Trust: 家人主理</h3>
+                <p className="text-gray-700 mb-3">
+                  全家人的健康守護者，平衡腸道菌叢支持免疫。
                 </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• 全家人益生菌 - 全家健康的守護者</li>
+                </ul>
               </div>
             </div>
           </section>
@@ -178,9 +199,9 @@ export default function Story() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">賦權女性</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">多元包容</h3>
                   <p className="text-gray-600">
-                    我們致力於幫助女性掌握自己的健康與美麗，而不是被定義。
+                    我們尊重每個人的獨特需求，提供針對不同生活方式的解決方案。
                   </p>
                 </div>
               </div>
@@ -194,7 +215,7 @@ export default function Story() {
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">永續與責任</h3>
                   <p className="text-gray-600">
-                    我們承諾使用天然、永續的成分，保護女性與地球。
+                    我們承諾使用天然、永續的成分，保護每一位使用者與地球。
                   </p>
                 </div>
               </div>

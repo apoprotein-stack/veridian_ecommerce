@@ -7,6 +7,49 @@ import { ShoppingCart, Leaf, Heart } from "lucide-react";
 export default function Home() {
   const { user, isAuthenticated, logout } = useAuth();
 
+  const productLines = [
+    {
+      id: "s-Trust",
+      name: "s-Trust",
+      title: "銀髮族主理",
+      description: "專為銀髮族設計的健康活力方案",
+      emoji: "👴",
+      color: "from-blue-100 to-blue-50",
+    },
+    {
+      id: "m-Trust",
+      name: "m-Trust",
+      title: "男性主理",
+      description: "男性活力與耐力的完美選擇",
+      emoji: "💪",
+      color: "from-orange-100 to-orange-50",
+    },
+    {
+      id: "w-Trust",
+      name: "w-Trust",
+      title: "女力主理",
+      description: "女性美麗與健康的專業護理",
+      emoji: "👩",
+      color: "from-pink-100 to-pink-50",
+    },
+    {
+      id: "g-Trust",
+      name: "g-Trust",
+      title: "運動主理",
+      description: "運動愛好者的能量補給站",
+      emoji: "⚡",
+      color: "from-yellow-100 to-yellow-50",
+    },
+    {
+      id: "f-Trust",
+      name: "f-Trust",
+      title: "家人主理",
+      description: "全家人的健康守護者",
+      emoji: "👨‍👩‍👧‍👦",
+      color: "from-green-100 to-green-50",
+    },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Navigation */}
@@ -86,7 +129,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <Heart className="w-6 h-6 text-primary mb-2" />
-                  <span className="text-sm text-gray-600">女性呵護</span>
+                  <span className="text-sm text-gray-600">專業護理</span>
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <ShoppingCart className="w-6 h-6 text-primary mb-2" />
@@ -109,8 +152,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Brand Story Preview */}
+      {/* Product Lines Section */}
       <section className="py-16 px-4 bg-gray-50">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              iTrust 產品線
+            </h2>
+            <p className="text-lg text-gray-600">
+              每一個系列都對應不同的生活需求，找到屬於妳的能量工具
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {productLines.map((line) => (
+              <Link key={line.id} href="/products" className="group">
+                <div className={`bg-gradient-to-br ${line.color} rounded-lg p-6 h-full flex flex-col items-center justify-center text-center hover:shadow-lg transition-shadow cursor-pointer`}>
+                  <div className="text-5xl mb-3">{line.emoji}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {line.name}
+                  </h3>
+                  <p className="text-sm font-medium text-gray-700 mb-3">
+                    {line.title}
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    {line.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/products">
+              <Button size="lg">
+                查看全部商品
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Story Preview */}
+      <section className="py-16 px-4 bg-white">
         <div className="container max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -122,7 +206,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="bg-[#f0fffe] p-8 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 🧬 創辦人 Evelyn Tasi
               </h3>
@@ -131,7 +215,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-sm">
+            <div className="bg-[#f0fffe] p-8 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 💚 iTrust 的核心
               </h3>

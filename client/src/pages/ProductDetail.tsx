@@ -157,6 +157,15 @@ export default function ProductDetail() {
                 </Link>
               </div>
 
+              {/* Assessment Link for Silver Trust */}
+              {product.id === 1 && (
+                <Link href="/silver-trust-assessment" className="block">
+                  <Button variant="outline" size="lg" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
+                    查看配方適配性評估
+                  </Button>
+                </Link>
+              )}
+
               {/* Product Benefits */}
               <div className="bg-[#f0fffe] p-6 rounded-lg space-y-3">
                 <h3 className="font-semibold text-gray-900">產品特色</h3>

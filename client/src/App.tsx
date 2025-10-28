@@ -10,6 +10,7 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import SilverTrustAssessment from "./pages/SilverTrustAssessment";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path={"/products/:id"} component={ProductDetail} />
       <Route path={"/cart"} component={Cart} />
       <Route path={"/checkout"} component={Checkout} />
+      <Route path={"/silver-trust-assessment"} component={SilverTrustAssessment} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

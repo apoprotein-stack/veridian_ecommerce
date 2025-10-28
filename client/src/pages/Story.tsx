@@ -23,7 +23,7 @@ export default function Story() {
 
       {/* Main Content */}
       <main className="py-16 px-4">
-        <div className="container max-w-3xl">
+        <div className="container max-w-4xl">
           {/* Brand Story Section */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">🌿 iTrust 品牌故事</h2>
@@ -67,31 +67,40 @@ export default function Story() {
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">🧬 Evelyn Tasi 創辦人自述</h2>
             
-            <div className="bg-white border border-gray-200 rounded-lg p-8">
-              <div className="space-y-6 text-gray-700 leading-relaxed">
-                <p>
-                  我創立 iTrust，不是為了延長青春，而是為了讓妳重新掌握它。
-                </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="md:col-span-1 flex justify-center">
+                <img 
+                  src="/founder.png" 
+                  alt="Evelyn Tasi" 
+                  className="w-full max-w-sm rounded-lg shadow-lg object-cover"
+                />
+              </div>
+              <div className="md:col-span-2 bg-white border border-gray-200 rounded-lg p-8">
+                <div className="space-y-6 text-gray-700 leading-relaxed">
+                  <p>
+                    我創立 iTrust，不是為了延長青春，而是為了讓妳重新掌握它。
+                  </p>
 
-                <p>
-                  在我眼中，女性不是名詞，是智慧的源頭。她的身體不是被定義的形狀，而是一種節奏、一種韻律、一種容器。
-                </p>
+                  <p>
+                    在我眼中，女性不是名詞，是智慧的源頭。她的身體不是被定義的形狀，而是一種節奏、一種韻律、一種容器。
+                  </p>
 
-                <p>
-                  我相信，每位女性都擁有一個能量中心——她是修復的場域，是新生命的守護者。她不該被遮掩，而應被曬出。保護新生命，衍生智慧。
-                </p>
+                  <p>
+                    我相信，每位女性都擁有一個能量中心——她是修復的場域，是新生命的守護者。她不該被遮掩，而應被曬出。保護新生命，衍生智慧。
+                  </p>
 
-                <p>
-                  我的背景橫跨生技、設計與女性心理學，但我從不相信單一解方。我相信韻律，相信節奏，相信身體的語言。所以我設計了 iTrust 的每一個元素——從女性呵護新生命的抽象圖騰，到粒子場的能量分佈——都不是裝飾，而是妳身體智慧的視覺語法。
-                </p>
+                  <p>
+                    我的背景橫跨生技、設計與女性心理學，但我從不相信單一解方。我相信韻律，相信節奏，相信身體的語言。所以我設計了 iTrust 的每一個元素——從女性呵護新生命的抽象圖騰，到粒子場的能量分佈——都不是裝飾，而是妳身體智慧的視覺語法。
+                  </p>
 
-                <p>
-                  我不販售奇蹟，也不定義美。我只提供工具，讓妳在每個生命階段，都能修復自己、聆聽自己、信任自己。
-                </p>
+                  <p>
+                    我不販售奇蹟，也不定義美。我只提供工具，讓妳在每個生命階段，都能修復自己、聆聽自己、信任自己。
+                  </p>
 
-                <p className="text-lg font-semibold text-primary">
-                  iTrust 是妳的能量系統。她不屬於市場，她屬於妳。
-                </p>
+                  <p className="text-lg font-semibold text-primary">
+                    iTrust 是妳的能量系統。她不屬於市場，她屬於妳。
+                  </p>
+                </div>
               </div>
             </div>
           </section>

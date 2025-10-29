@@ -75,11 +75,19 @@ export default function ProductDetail() {
         <div className="container max-w-4xl">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Product Image */}
-            <div className="bg-gradient-to-br from-[#e0f7f4] to-[#f0fffe] rounded-lg h-96 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-8xl mb-4">💚</div>
-                <p className="text-gray-600">{product.category}</p>
-              </div>
+            <div className="bg-gradient-to-br from-[#e0f7f4] to-[#f0fffe] rounded-lg h-96 flex items-center justify-center overflow-hidden">
+              {product.id === 3 || product.id === 4 ? (
+                <img 
+                  src={product.id === 3 ? "/w-trust-product-1.png" : "/w-trust-product-2.png"}
+                  alt={product.name}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="text-center">
+                  <div className="text-8xl mb-4">💚</div>
+                  <p className="text-gray-600">{product.category}</p>
+                </div>
+              )}
             </div>
 
             {/* Product Info */}
@@ -180,11 +188,11 @@ export default function ProductDetail() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">✓</span>
-                    <span>為女性量身打造</span>
+                    <span>為銀髮量身打造</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">✓</span>
-                    <span>支持妳的修復之旅</span>
+                    <span>支持你的活力修復之旅</span>
                   </li>
                 </ul>
               </div>

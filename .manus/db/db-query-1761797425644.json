@@ -1,0 +1,40 @@
+{
+  "query": "SELECT id, name, category FROM products ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4KZ7fUnndvPR2k8.root --database nneXUHmDme2nniBTgFLSdf --execute SELECT id, name, category FROM products ORDER BY id;",
+  "rows": [
+    {
+      "id": "30001",
+      "name": "銀寶常青活力沖泡飲",
+      "category": "s-Trust 銀髮族主理"
+    },
+    {
+      "id": "30002",
+      "name": "精力馬卡沖泡飲",
+      "category": "m-Trust 男性主理"
+    },
+    {
+      "id": "30003",
+      "name": "美妍膠原蛋白",
+      "category": "w-Trust 女力主理"
+    },
+    {
+      "id": "30004",
+      "name": "蔓越莓清新私密凝露",
+      "category": "w-Trust 女力主理"
+    },
+    {
+      "id": "30005",
+      "name": "運動活力能量棒",
+      "category": "g-Trust 運動主理"
+    },
+    {
+      "id": "30006",
+      "name": "全家人益生菌",
+      "category": "f-Trust 家人主理"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tcategory\n30001\t銀寶常青活力沖泡飲\ts-Trust 銀髮族主理\n30002\t精力馬卡沖泡飲\tm-Trust 男性主理\n30003\t美妍膠原蛋白\tw-Trust 女力主理\n30004\t蔓越莓清新私密凝露\tw-Trust 女力主理\n30005\t運動活力能量棒\tg-Trust 運動主理\n30006\t全家人益生菌\tf-Trust 家人主理\n",
+  "stderr": "",
+  "execution_time_ms": 1616
+}

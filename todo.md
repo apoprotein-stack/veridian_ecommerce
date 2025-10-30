@@ -85,3 +85,10 @@
 - [x] 在商品詳情頁面中顯示 w-Trust 產品圖片
 - [x] 優化圖片顯示效果
 
+
+
+## Bug 修複
+
+- [x] 修複 w-Trust 產品圖片不顯示的問題（確認產品 ID 並更新 ProductDetail.tsx 中的条件邏輯）
+- [x] 修複路由 URL 顯示 /products/30003 的問題
+

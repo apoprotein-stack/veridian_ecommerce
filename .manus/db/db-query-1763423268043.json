@@ -1,0 +1,9 @@
+{
+  "query": "DELETE FROM products; INSERT INTO products (name, category, price, description) VALUES \n('Veridian 私密保養凝露', 'skincare', 599, '專為女性私密肌膚設計的水凝絲滑凝露，採用天然成分與先進科技結合，提供安全、有效、舒適的護理體驗。'),\n('Veridian 清爽精華液', 'skincare', 699, '輕盈滲透的精華液，快速吸收，不留黏膩感。適合日常使用，提供深層保濕與微生物平衡。'),\n('Veridian 舒適護理乳霜', 'skincare', 799, '濃郁滋養的乳霜，提供長時間保濕與舒適感。特別適合乾燥季節或特殊護理需求。'),\n('Veridian 溫和潔淨露', 'skincare', 449, '溫和的潔淨配方，專為私密肌膚設計。不破壞自然 pH 值，保護肌膚自然菌群。'),\n('Veridian 益生元修護精油', 'skincare', 849, '富含益生元與天然精油的修護精油，提供舒適與滋養。可用於日常護理或特殊護理。'),\n('Veridian 完整護理套組', 'skincare', 2499, '包含所有核心產品的完整套組，為妳提供全方位的私密保養方案。');",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4KZ7fUnndvPR2k8.root --database nneXUHmDme2nniBTgFLSdf --execute DELETE FROM products; INSERT INTO products (name, category, price, description) VALUES \n('Veridian 私密保養凝露', 'skincare', 599, '專為女性私密肌膚設計的水凝絲滑凝露，採用天然成分與先進科技結合，提供安全、有效、舒適的護理體驗。'),\n('Veridian 清爽精華液', 'skincare', 699, '輕盈滲透的精華液，快速吸收，不留黏膩感。適合日常使用，提供深層保濕與微生物平衡。'),\n('Veridian 舒適護理乳霜', 'skincare', 799, '濃郁滋養的乳霜，提供長時間保濕與舒適感。特別適合乾燥季節或特殊護理需求。'),\n('Veridian 溫和潔淨露', 'skincare', 449, '溫和的潔淨配方，專為私密肌膚設計。不破壞自然 pH 值，保護肌膚自然菌群。'),\n('Veridian 益生元修護精油', 'skincare', 849, '富含益生元與天然精油的修護精油，提供舒適與滋養。可用於日常護理或特殊護理。'),\n('Veridian 完整護理套組', 'skincare', 2499, '包含所有核心產品的完整套組，為妳提供全方位的私密保養方案。');",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1768
+}

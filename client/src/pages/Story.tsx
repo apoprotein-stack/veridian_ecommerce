@@ -1,257 +1,226 @@
-import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
 export default function Story() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="bg-gradient-to-br from-primary to-[#0a9b8a] text-white py-12 px-4">
-        <div className="container max-w-4xl">
-          <Link href="/" className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
-            <ArrowLeft className="w-5 h-5" />
-            <span>返回首頁</span>
+    <div className="min-h-screen flex flex-col bg-white">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-white border-b border-gray-100">
+        <div className="container flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center gap-2">
+            <img src="/veridian-logo.png" alt="Veridian" className="h-10 w-10" />
+            <span className="text-xl font-bold text-green-700 hidden sm:inline">Veridian</span>
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            iTrust 品牌故事
+          <div className="flex items-center gap-4">
+            <Link href="/products" className="text-gray-700 hover:text-green-700 transition-colors">
+              商品
+            </Link>
+            <Link href="/story" className="text-gray-700 hover:text-green-700 transition-colors">
+              品牌故事
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Header */}
+      <section className="py-12 px-4 bg-gradient-to-br from-green-50 to-white">
+        <div className="container max-w-4xl">
+          <Link href="/">
+            <Button variant="ghost" size="sm" className="mb-6">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              返回首頁
+            </Button>
+          </Link>
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+            Veridian 的故事
           </h1>
-          <p className="text-lg opacity-90">
-            信任，是女性最深的修復力
+          <p className="text-xl text-gray-600">
+            一個致力於女性私密保養的科學品牌，守護妳的真實與自信。
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* Main Content */}
-      <main className="py-16 px-4">
+      {/* Brand Philosophy */}
+      <section className="py-16 px-4 bg-white">
         <div className="container max-w-4xl">
-          {/* Brand Story Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">🌿 iTrust 品牌故事</h2>
-            
-            <div className="space-y-6 text-gray-700 leading-relaxed">
-              <p>
-                信任，是女性最深的修復力。
-              </p>
-              
-              <p>
-                在科技與情感交錯的時代，女性不再只是被照顧的角色，而是自我修復、自我主權的掌握者。iTrust 誕生於這樣的信念——她不是保養品牌，而是一套能量系統，一個讓女性重新掌握青春節奏與身體語言的模組化引擎。
-              </p>
-
-              <p>
-                創辦人 Evelyn Tasi，橫跨生技、設計與女性心理學，她深知：真正的修復，不是外在的補充，而是內在的信任。她設計了 iTrust 的每一個元素——從女性呵護新生命的抽象圖騰，到粒子場的能量分佈——都不是裝飾，而是身體智慧的視覺語法。
-              </p>
-
-              <p>
-                iTrust 不談器官，也不定義美。她尊重每位女性的韻律，相信每個能量中心都值得被呵護與曬出。
-              </p>
-
-              <p className="text-lg font-semibold text-primary">
-                女性不是名詞，是智慧的源頭。保護新生命，衍生智慧。
-              </p>
-
-              <p>
-                iTrust 的核心產品不只是膠原蛋白或荷爾蒙調理，它是「青春修復的主權工具」。每一個系列都對應一種女性的節奏狀態。
-              </p>
-
-              <div className="bg-[#f0fffe] border-l-4 border-primary p-6 my-8">
-                <p className="text-gray-800">
-                  <span className="font-semibold">iTrust 不屬於市場，她屬於妳。</span><br/>
-                  她不販售奇蹟，只提供工具。<br/>
-                  她不延長青春，只讓妳重新掌握它。
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Founder Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">🧬 Evelyn Tasi 創辦人自述</h2>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="md:col-span-1 flex justify-center">
-                <img 
-                  src="/founder.png" 
-                  alt="Evelyn Tasi" 
-                  className="w-full max-w-sm rounded-lg shadow-lg object-cover"
-                />
-              </div>
-              <div className="md:col-span-2 bg-white border border-gray-200 rounded-lg p-8">
-                <div className="space-y-6 text-gray-700 leading-relaxed">
-                  <p>
-                    我創立 iTrust，不是為了延長青春，而是為了讓妳重新掌握它。
-                  </p>
-
-                  <p>
-                    在我眼中，女性不是名詞，是智慧的源頭。她的身體不是被定義的形狀，而是一種節奏、一種韻律、一種容器。
-                  </p>
-
-                  <p>
-                    我相信，每位女性都擁有一個能量中心——她是修復的場域，是新生命的守護者。她不該被遮掩，而應被曬出。保護新生命，衍生智慧。
-                  </p>
-
-                  <p>
-                    我的背景橫跨生技、設計與女性心理學，但我從不相信單一解方。我相信韻律，相信節奏，相信身體的語言。所以我設計了 iTrust 的每一個元素——從女性呵護新生命的抽象圖騰，到粒子場的能量分佈——都不是裝飾，而是妳身體智慧的視覺語法。
-                  </p>
-
-                  <p>
-                    我不販售奇蹟，也不定義美。我只提供工具，讓妳在每個生命階段，都能修復自己、聆聽自己、信任自己。
-                  </p>
-
-                  <p className="text-lg font-semibold text-primary">
-                    iTrust 是妳的能量系統。她不屬於市場，她屬於妳。
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Product Lines Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">💚 iTrust 產品系列</h2>
-            
-            <div className="space-y-6">
-              {/* s-Trust */}
-              <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">👴 s-Trust: 銀髮族主理</h3>
-                <p className="text-gray-700 mb-3">
-                  專為銀髮族設計的健康活力方案，溫和配方易於吸收。
-                </p>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• 銀寶常青活力沖泡飲 - 維持活力與健康的完美選擇</li>
-                </ul>
-              </div>
-
-              {/* m-Trust */}
-              <div className="bg-orange-50 p-6 rounded-lg border border-orange-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">💪 m-Trust: 男性主理</h3>
-                <p className="text-gray-700 mb-3">
-                  男性活力與耐力的完美選擇，天然配方快速見效。
-                </p>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• 精力馬卡沖泡飲 - 提升精力與耐力的天然夥伴</li>
-                </ul>
-              </div>
-
-              {/* w-Trust */}
-              <div className="bg-pink-50 p-6 rounded-lg border border-pink-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">👩 w-Trust: 女力主理</h3>
-                <p className="text-gray-700 mb-3">
-                  女性美麗與健康的專業護理，內在修復外在綻放。
-                </p>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• 美妍膠原蛋白 - 支持肌膚彈性與光澤</li>
-                  <li>• 蔓越莓清新私密凝露 - 女性私密護理的專業選擇</li>
-                </ul>
-              </div>
-
-              {/* g-Trust */}
-              <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">⚡ g-Trust: 運動主理</h3>
-                <p className="text-gray-700 mb-3">
-                  運動愛好者的能量補給站，便攜式設計隨時享受活力。
-                </p>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• 運動活力能量棒 - 快速補充能量與營養</li>
-                </ul>
-              </div>
-
-              {/* f-Trust */}
-              <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">👨‍👩‍👧‍👦 f-Trust: 家人主理</h3>
-                <p className="text-gray-700 mb-3">
-                  全家人的健康守護者，平衡腸道菌叢支持免疫。
-                </p>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• 全家人益生菌 - 全家健康的守護者</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* Values Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">✨ iTrust 的核心價值</h2>
-            
-            <div className="space-y-4">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white font-bold">
-                    1
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">信任第一</h3>
-                  <p className="text-gray-600">
-                    我們相信每位女性的身體智慧，提供透明、真實的產品與服務。
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white font-bold">
-                    2
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">科學與設計的結合</h3>
-                  <p className="text-gray-600">
-                    每個產品都經過嚴謹的科學驗證，同時保持美學與人文關懷。
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white font-bold">
-                    3
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">多元包容</h3>
-                  <p className="text-gray-600">
-                    我們尊重每個人的獨特需求，提供針對不同生活方式的解決方案。
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white font-bold">
-                    4
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">永續與責任</h3>
-                  <p className="text-gray-600">
-                    我們承諾使用天然、永續的成分，保護每一位使用者與地球。
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* CTA */}
-          <section className="bg-primary text-white rounded-lg p-12 text-center">
-            <h2 className="text-3xl font-bold mb-4">
-              準備好開始妳的修復之旅了嗎？
-            </h2>
-            <p className="text-lg mb-8 opacity-90">
-              選擇適合妳的能量工具，重新掌握身體的智慧與節奏
+          <h2 className="text-4xl font-bold mb-8 text-gray-900">
+            品牌理念
+          </h2>
+          <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+            <p>
+              Veridian 源於拉丁文「verdis」，意為「綠色」與「真實」。我們相信，女性的私密健康不應該是禁忌話題，而是應該被尊重、被科學對待、被自信地談論。
             </p>
-            <Link href="/products">
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="bg-white text-primary hover:bg-gray-100"
-              >
-                探索所有商品
-              </Button>
-            </Link>
-          </section>
+            <p>
+              在一個充滿不確定性的時代，Veridian 誕生於一個簡單但深刻的信念：每位女性都值得擁有安全、有效、舒適的私密保養方案。我們不販售承諾，只提供經過科學驗證的解決方案。
+            </p>
+            <p>
+              我們的產品採用天然成分與先進科技的結合，特別強調「水凝絲滑」的極致體驗。從精華液的輕盈滲透，到凝露的絲滑舒適，每一個產品都經過精心設計，為妳的私密肌膚提供最溫和而有效的護理。
+            </p>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Brand Values */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl font-bold mb-12 text-gray-900">
+            核心價值
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-sm">
+              <h3 className="text-2xl font-bold mb-4 text-green-700">科學信任</h3>
+              <p className="text-gray-600">
+                所有成分與配方都經過臨床驗證，我們相信科學的力量。每一個聲稱都有數據支持，每一個承諾都能兌現。
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-sm">
+              <h3 className="text-2xl font-bold mb-4 text-green-700">極致體驗</h3>
+              <p className="text-gray-600">
+                不是簡單的功效，而是整個使用體驗。水凝絲滑的劑型、舒適的吸收感、愉悅的香氣，每個細節都經過精心設計。
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-sm">
+              <h3 className="text-2xl font-bold mb-4 text-green-700">隱私尊重</h3>
+              <p className="text-gray-600">
+                我們理解隱私的重要性。從盲盒包裝到匿名購買，我們用行動保護妳的隱私，讓妳可以自信而坦誠地選擇。
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-sm">
+              <h3 className="text-2xl font-bold mb-4 text-green-700">女性賦權</h3>
+              <p className="text-gray-600">
+                私密保養不是羞恥，而是自我照顧的一部分。我們透過教育與對話，幫助女性重新掌握身體的主權與自信。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Philosophy */}
+      <section className="py-16 px-4 bg-white">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl font-bold mb-8 text-gray-900">
+            產品哲學
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">水凝絲滑科技</h3>
+              <p className="text-gray-600 mb-4">
+                Veridian 的核心創新是「水凝絲滑」劑型。這不是簡單的營銷詞彙，而是經過多年研發的結果。我們的配方結合了：
+              </p>
+              <ul className="text-gray-600 space-y-2 mb-6">
+                <li>✓ 專屬 pH 值配方，符合女性私密肌膚的自然環境</li>
+                <li>✓ 玻尿酸與益生元，提供深層保濕與微生物平衡</li>
+                <li>✓ 輕盈質地，無黏膩感，快速吸收</li>
+                <li>✓ 天然成分，無激素、無類固醇</li>
+              </ul>
+              <p className="text-gray-600">
+                每一款產品都是為了解決特定的女性需求而設計，從日常保養到特殊護理，Veridian 都有完整的方案。
+              </p>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="/veridian-packaging.png" 
+                alt="Veridian 產品包裝" 
+                className="w-full h-96 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Experience */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl font-bold mb-8 text-gray-900">
+            品牌體驗
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="rounded-lg overflow-hidden shadow-lg order-2 md:order-1">
+              <img 
+                src="/veridian-store.png" 
+                alt="Veridian 店鋪環境" 
+                className="w-full h-96 object-cover"
+              />
+            </div>
+            <div className="order-1 md:order-2">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">高級品牌空間</h3>
+              <p className="text-gray-600 mb-4">
+                Veridian 的零售空間設計理念是「隱密、優雅、專業」。我們創造了一個讓女性感到舒適、被尊重的購物環境。
+              </p>
+              <ul className="text-gray-600 space-y-3">
+                <li>
+                  <strong>隱密諮詢區</strong>：獨立的諮詢空間，讓妳可以自信地提出任何問題
+                </li>
+                <li>
+                  <strong>專業顧問</strong>：經過培訓的品牌大使，提供科學的護理建議
+                </li>
+                <li>
+                  <strong>盲盒包裝</strong>：匿名購買選項，保護妳的隱私
+                </li>
+                <li>
+                  <strong>教育工作坊</strong>：定期舉辦私密保養知識講座
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 px-4 bg-green-700 text-white">
+        <div className="container max-w-2xl text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            加入 Veridian 的信任之旅
+          </h2>
+          <p className="text-lg mb-8 text-green-100">
+            探索我們的完整產品線，找到適合妳的私密保養方案。
+          </p>
+          <Link href="/products">
+            <Button size="lg" variant="secondary">
+              探索商品
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-12 px-4">
+        <div className="container max-w-6xl">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <h4 className="font-bold text-white mb-4">關於 Veridian</h4>
+              <p className="text-sm">
+                致力於女性私密保養的科學品牌，守護妳的真實與自信。
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-4">購物</h4>
+              <ul className="text-sm space-y-2">
+                <li><Link href="/products" className="hover:text-white">所有商品</Link></li>
+                <li><Link href="/products" className="hover:text-white">新品上市</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-4">品牌</h4>
+              <ul className="text-sm space-y-2">
+                <li><Link href="/story" className="hover:text-white">品牌故事</Link></li>
+                <li><Link href="/story" className="hover:text-white">品牌理念</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-4">法律</h4>
+              <ul className="text-sm space-y-2">
+                <li><a href="#" className="hover:text-white">隱私政策</a></li>
+                <li><a href="#" className="hover:text-white">服務條款</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 pt-8 text-center text-sm">
+            <p>&copy; 2025 Veridian. 守護妳的真實。</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
-

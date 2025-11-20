@@ -36,26 +36,89 @@ export default function Story() {
             Veridian 的故事
           </h1>
           <p className="text-xl text-gray-600">
-            一個致力於女性私密保養的科學品牌，守護妳的真實與自信。
+            一個關於真實、透明與信任的品牌旅程
           </p>
         </div>
       </section>
 
-      {/* Brand Philosophy */}
+      {/* Brand Naming */}
       <section className="py-16 px-4 bg-white">
         <div className="container max-w-4xl">
-          <h2 className="text-4xl font-bold mb-8 text-gray-900">
-            品牌理念
+          <h2 className="text-4xl font-bold mb-12 text-gray-900">
+            1.1 品牌名稱：Veridian (薇芮迪安)
           </h2>
-          <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">命名構成</h3>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                融合 <strong>Verity</strong> (真實) 與 <strong>Guardian</strong> (守護者)，創造出 <strong>Veridian</strong> 這個獨特的品牌名稱。
+              </p>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">品牌意涵</h3>
+              <div className="space-y-6">
+                <div className="pl-6 border-l-4 border-green-700">
+                  <h4 className="text-xl font-bold mb-2 text-gray-900">真實的守護者</h4>
+                  <p className="text-gray-600">
+                    我們的核心使命，是以最誠實、透明的方式，守護每一位使用者的身體健康與自信。
+                  </p>
+                </div>
+                <div className="pl-6 border-l-4 border-green-700">
+                  <h4 className="text-xl font-bold mb-2 text-gray-900">翠綠生命力</h4>
+                  <p className="text-gray-600">
+                    名字發音同 "Viridian" (翠綠色)，象徵品牌源於自然、純淨、充滿生命力的產品哲學。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Tagline */}
+      <section className="py-16 px-4 bg-green-50">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl font-bold mb-8 text-gray-900">
+            1.2 品牌標語
+          </h2>
+          <div className="bg-white p-12 rounded-lg shadow-sm border-l-4 border-green-700">
+            <p className="text-3xl font-bold text-gray-900 mb-4">
+              Veridian: Guarding Your Truth.
+            </p>
+            <p className="text-3xl font-bold text-green-700">
+              Veridian: 守護妳的真實。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Story */}
+      <section className="py-16 px-4 bg-white">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl font-bold mb-12 text-gray-900">
+            1.3 品牌故事：尋找真實的翠綠
+          </h2>
+          <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
             <p>
-              Veridian 源於拉丁文「verdis」，意為「綠色」與「真實」。我們相信，女性的私密健康不應該是禁忌話題，而是應該被尊重、被科學對待、被自信地談論。
+              一切，始於一個無法安心的夜晚。
             </p>
             <p>
-              在一個充滿不確定性的時代，Veridian 誕生於一個簡單但深刻的信念：每位女性都值得擁有安全、有效、舒適的私密保養方案。我們不販售承諾，只提供經過科學驗證的解決方案。
+              我們曾在浴室的置物架前感到困惑，面對那些承諾奇蹟的瓶罐，卻在看見艱深難懂的成分列表時，不禁自問：「我真的能將這些，交給我最私密的肌膚嗎？」
             </p>
             <p>
-              我們的產品採用天然成分與先進科技的結合，特別強調「水凝絲滑」的極致體驗。從精華液的輕盈滲透，到凝露的絲滑舒適，每一個產品都經過精心設計，為妳的私密肌膚提供最溫和而有效的護理。
+              這種不信任感，橫亙在我們與「好好照顧自己」之間。我們發現，世界需要的不是更多的承諾，而是更少的祕密；不是更華麗的成分，而是更誠實 (Honest) 的溝通。我們渴望一種能被完全看透的真實 (Verity)。
+            </p>
+            <p>
+              於是，Veridian 誕生了。
+            </p>
+            <p>
+              我們是「真實的守護者」，以撰寫公開報告的嚴謹，對待每一次的配方研發。我們走進森林與實驗室，只為尋找那片最安心的「翠綠」。在 Veridian 的世界裡，沒有成分需要隱藏，因為真正的信任，始於完全的透明。
+            </p>
+            <p>
+              我們相信，每個人都自帶光環 (Aura)——那是獨一無二的自信與力量。我們的使命，就是以最純淨的方式守護 (Guard) 這份光芒，讓它不被身體的不適所遮蔽。
+            </p>
+            <p>
+              Veridian 不僅僅是保養品，它是一份透明的承諾，一場回歸真實的旅程。我們邀請您，一起告別成分焦慮，重新建立與身體的信任關係。
             </p>
           </div>
         </div>
@@ -71,7 +134,7 @@ export default function Story() {
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <h3 className="text-2xl font-bold mb-4 text-green-700">科學信任</h3>
               <p className="text-gray-600">
-                所有成分與配方都經過臨床驗證，我們相信科學的力量。每一個聲稱都有數據支持，每一個承諾都能兌現。
+                所有成分與配方都經過臨床驗證。我們相信科學的力量，每一個聲稱都有數據支持，每一個承諾都能兌現。
               </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-sm">
@@ -96,23 +159,37 @@ export default function Story() {
         </div>
       </section>
 
-      {/* Product Philosophy */}
+      {/* Water-Gel Technology */}
       <section className="py-16 px-4 bg-white">
         <div className="container max-w-4xl">
-          <h2 className="text-4xl font-bold mb-8 text-gray-900">
-            產品哲學
+          <h2 className="text-4xl font-bold mb-12 text-gray-900">
+            水凝絲滑科技
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">水凝絲滑科技</h3>
-              <p className="text-gray-600 mb-4">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">
+                極致輕盈的護理體驗
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
                 Veridian 的核心創新是「水凝絲滑」劑型。這不是簡單的營銷詞彙，而是經過多年研發的結果。我們的配方結合了：
               </p>
-              <ul className="text-gray-600 space-y-2 mb-6">
-                <li>✓ 專屬 pH 值配方，符合女性私密肌膚的自然環境</li>
-                <li>✓ 玻尿酸與益生元，提供深層保濕與微生物平衡</li>
-                <li>✓ 輕盈質地，無黏膩感，快速吸收</li>
-                <li>✓ 天然成分，無激素、無類固醇</li>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-700 font-bold text-xl">✓</span>
+                  <span className="text-gray-600">專屬 pH 值配方，符合女性私密肌膚的自然環境</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-700 font-bold text-xl">✓</span>
+                  <span className="text-gray-600">玻尿酸與益生元，提供深層保濕與微生物平衡</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-700 font-bold text-xl">✓</span>
+                  <span className="text-gray-600">輕盈質地，無黏膩感，快速吸收</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-700 font-bold text-xl">✓</span>
+                  <span className="text-gray-600">天然成分，無激素、無類固醇</span>
+                </li>
               </ul>
               <p className="text-gray-600">
                 每一款產品都是為了解決特定的女性需求而設計，從日常保養到特殊護理，Veridian 都有完整的方案。
@@ -121,7 +198,7 @@ export default function Story() {
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img 
                 src="/veridian-packaging.png" 
-                alt="Veridian 產品包裝" 
+                alt="Veridian 水凝絲滑產品" 
                 className="w-full h-96 object-cover"
               />
             </div>
@@ -132,34 +209,38 @@ export default function Story() {
       {/* Brand Experience */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="container max-w-4xl">
-          <h2 className="text-4xl font-bold mb-8 text-gray-900">
+          <h2 className="text-4xl font-bold mb-12 text-gray-900">
             品牌體驗
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="rounded-lg overflow-hidden shadow-lg order-2 md:order-1">
               <img 
                 src="/veridian-store.png" 
-                alt="Veridian 店鋪環境" 
+                alt="Veridian 高級品牌空間" 
                 className="w-full h-96 object-cover"
               />
             </div>
             <div className="order-1 md:order-2">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">高級品牌空間</h3>
-              <p className="text-gray-600 mb-4">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">高級品牌空間</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
                 Veridian 的零售空間設計理念是「隱密、優雅、專業」。我們創造了一個讓女性感到舒適、被尊重的購物環境。
               </p>
-              <ul className="text-gray-600 space-y-3">
+              <ul className="space-y-4">
                 <li>
-                  <strong>隱密諮詢區</strong>：獨立的諮詢空間，讓妳可以自信地提出任何問題
+                  <strong className="text-gray-900">隱密諮詢區</strong>
+                  <p className="text-gray-600">獨立的諮詢空間，讓妳可以自信地提出任何問題</p>
                 </li>
                 <li>
-                  <strong>專業顧問</strong>：經過培訓的品牌大使，提供科學的護理建議
+                  <strong className="text-gray-900">專業顧問</strong>
+                  <p className="text-gray-600">經過培訓的品牌大使，提供科學的護理建議</p>
                 </li>
                 <li>
-                  <strong>盲盒包裝</strong>：匿名購買選項，保護妳的隱私
+                  <strong className="text-gray-900">盲盒包裝</strong>
+                  <p className="text-gray-600">匿名購買選項，保護妳的隱私</p>
                 </li>
                 <li>
-                  <strong>教育工作坊</strong>：定期舉辦私密保養知識講座
+                  <strong className="text-gray-900">教育工作坊</strong>
+                  <p className="text-gray-600">定期舉辦私密保養知識講座</p>
                 </li>
               </ul>
             </div>
@@ -191,7 +272,7 @@ export default function Story() {
             <div>
               <h4 className="font-bold text-white mb-4">關於 Veridian</h4>
               <p className="text-sm">
-                致力於女性私密保養的科學品牌，守護妳的真實與自信。
+                真實的守護者。以最誠實、透明的方式，守護每一位使用者的身體健康與自信。
               </p>
             </div>
             <div>
@@ -217,7 +298,7 @@ export default function Story() {
             </div>
           </div>
           <div className="border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; 2025 Veridian. 守護妳的真實。</p>
+            <p>&copy; 2025 Veridian (薇芮迪安). 守護妳的真實。</p>
           </div>
         </div>
       </footer>

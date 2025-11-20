@@ -1,11 +1,11 @@
-import { useAuth } from "@/_core/hooks/useAuth";
-import { Button } from "@/components/ui/button";
-import { APP_LOGO, APP_TITLE, getLoginUrl } from "@/const";
 import { Link } from "wouter";
-import { ShoppingCart, Leaf } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ShoppingCart, Heart } from "lucide-react";
+import { useAuth } from "@/_core/hooks/useAuth";
+import { getLoginUrl } from "@/const";
 
 export default function Home() {
-  const { isAuthenticated, logout } = useAuth();
+  const { isAuthenticated } = useAuth();
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -13,54 +13,36 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-100">
         <div className="container flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <img src={APP_LOGO} alt="Veridian" className="h-10 w-10" />
-            <span className="text-xl font-bold text-green-700 hidden sm:inline">{APP_TITLE}</span>
+            <img src="/veridian-logo.png" alt="Veridian" className="h-10 w-10" />
+            <span className="text-xl font-bold text-green-700 hidden sm:inline">Veridian</span>
           </Link>
-          
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <Link href="/products" className="text-gray-700 hover:text-green-700 transition-colors">
               商品
             </Link>
             <Link href="/story" className="text-gray-700 hover:text-green-700 transition-colors">
               品牌故事
             </Link>
-            
-            {isAuthenticated ? (
-              <>
-                <Link href="/cart" className="relative">
-                  <ShoppingCart className="w-5 h-5 text-gray-700 hover:text-green-700 transition-colors" />
-                </Link>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  onClick={() => logout()}
-                >
-                  登出
-                </Button>
-              </>
-            ) : (
-              <Button 
-                size="sm"
-                onClick={() => window.location.href = getLoginUrl()}
-              >
-                登入
-              </Button>
-            )}
+            <Link href="/products" className="text-gray-700 hover:text-green-700 transition-colors">
+              <ShoppingCart className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="flex-1 flex items-center justify-center py-20 px-4 bg-gradient-to-br from-white via-green-50 to-white">
-        <div className="container max-w-4xl">
+      {/* Hero Section - Brand Story */}
+      <section className="py-20 px-4 bg-gradient-to-br from-green-50 via-white to-green-50">
+        <div className="container max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                守護妳的真實
+                尋找真實的翠綠
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
-                Veridian 是一個致力於女性私密保養的品牌，提供科學配方與極致護理體驗，讓妳重新掌握自信。
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                一切，始於一個無法安心的夜晚。
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                我們曾在浴室的置物架前感到困惑，面對那些承諾奇蹟的瓶罐，卻在看見艱深難懂的成分列表時，不禁自問：「我真的能將這些，交給我最私密的肌膚嗎？」
               </p>
               <div className="flex gap-4">
                 <Link href="/products">
@@ -70,86 +52,102 @@ export default function Home() {
                 </Link>
                 <Link href="/story">
                   <Button size="lg" variant="outline">
-                    了解品牌
+                    閱讀故事
                   </Button>
                 </Link>
               </div>
             </div>
-
-            {/* Right Image */}
-            <div className="flex justify-center">
+            <div className="rounded-lg overflow-hidden shadow-2xl">
               <img 
                 src="/veridian-logo.png" 
                 alt="Veridian Logo" 
-                className="w-80 h-80 object-contain"
+                className="w-full h-96 object-contain bg-gradient-to-br from-green-50 to-white p-12"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Brand Values Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Brand Tagline */}
+      <section className="py-16 px-4 bg-green-700 text-white">
+        <div className="container max-w-4xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Veridian: Guarding Your Truth
+          </h2>
+          <p className="text-xl text-green-100">
+            Veridian: 守護妳的真實
+          </p>
+        </div>
+      </section>
+
+      {/* Brand Philosophy */}
+      <section className="py-20 px-4 bg-white">
         <div className="container max-w-4xl">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
             Veridian 的核心價值
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <Leaf className="w-12 h-12 text-green-700 mb-4" />
-              <h3 className="text-xl font-bold mb-3 text-gray-900">天然科學</h3>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Heart className="w-8 h-8 text-green-700" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">真實的守護者</h3>
               <p className="text-gray-600">
-                採用天然成分與科學配方，為妳的私密肌膚提供最溫和的護理。
+                我們的核心使命，是以最誠實、透明的方式，守護每一位使用者的身體健康與自信。
               </p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <Leaf className="w-12 h-12 text-green-700 mb-4" />
-              <h3 className="text-xl font-bold mb-3 text-gray-900">極致體驗</h3>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl">🌿</span>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">翠綠生命力</h3>
               <p className="text-gray-600">
-                水凝絲滑的劑型設計，提供無與倫比的使用感受與舒適度。
+                名字發音同 "Viridian" (翠綠色)，象徵品牌源於自然、純淨、充滿生命力的產品哲學。
               </p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <Leaf className="w-12 h-12 text-green-700 mb-4" />
-              <h3 className="text-xl font-bold mb-3 text-gray-900">隱私保護</h3>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl">✨</span>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">透明的承諾</h3>
               <p className="text-gray-600">
-                尊重妳的隱私，提供匿名購買與隱密包裝的貼心服務。
+                沒有成分需要隱藏，因為真正的信任，始於完全的透明。我們邀請您，一起告別成分焦慮。
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Brand Showcase Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="container max-w-6xl">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+      {/* Brand Applications */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container max-w-5xl">
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
             Veridian 品牌應用
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/veridian-products.jpg" 
-                alt="Veridian 產品系列" 
+                src="/veridian-product-packaging-collection.jpg" 
+                alt="Veridian 完整產品線" 
                 className="w-full h-96 object-cover"
               />
-              <div className="p-6 bg-gray-50">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">完整產品線</h3>
+              <div className="p-6 bg-white">
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">完整產品線</h3>
                 <p className="text-gray-600">
-                  從精華液、乳液到凝露，Veridian 提供全方位的私密保養解決方案。
+                  從清潔、精華到乳霜，Veridian 提供全方位的私密保養方案，每一款產品都經過科學驗證。
                 </p>
               </div>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img 
                 src="/veridian-store.png" 
-                alt="Veridian 店鋪環境" 
+                alt="Veridian 高級品牌空間" 
                 className="w-full h-96 object-cover"
               />
-              <div className="p-6 bg-gray-50">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">高級品牌空間</h3>
+              <div className="p-6 bg-white">
+                <h3 className="text-2xl font-bold mb-3 text-gray-900">高級品牌空間</h3>
                 <p className="text-gray-600">
-                  優雅的店鋪設計，為妳打造舒適、隱密的購物與諮詢環境。
+                  隱密、優雅、專業的購物環境。我們創造了一個讓女性感到舒適、被尊重的零售空間。
                 </p>
               </div>
             </div>
@@ -157,20 +155,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 px-4 bg-green-700 text-white">
+      {/* Product Showcase */}
+      <section className="py-20 px-4 bg-white">
+        <div className="container max-w-5xl">
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
+            水凝絲滑科技
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src="/veridian-packaging.png" 
+                alt="Veridian 水凝絲滑產品" 
+                className="w-full h-96 object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold mb-6 text-gray-900">
+                極致輕盈的護理體驗
+              </h3>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Veridian 的核心創新是「水凝絲滑」劑型。這不是簡單的營銷詞彙，而是經過多年研發的結果。
+              </p>
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3">
+                  <span className="text-green-700 font-bold text-xl">✓</span>
+                  <span className="text-gray-600">專屬 pH 值配方，符合女性私密肌膚的自然環境</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-700 font-bold text-xl">✓</span>
+                  <span className="text-gray-600">玻尿酸與益生元，提供深層保濕與微生物平衡</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-700 font-bold text-xl">✓</span>
+                  <span className="text-gray-600">輕盈質地，無黏膩感，快速吸收</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-green-700 font-bold text-xl">✓</span>
+                  <span className="text-gray-600">天然成分，無激素、無類固醇</span>
+                </li>
+              </ul>
+              <Link href="/products">
+                <Button size="lg" className="bg-green-700 hover:bg-green-800">
+                  探索所有商品
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 px-4 bg-gradient-to-r from-green-700 to-green-800 text-white">
         <div className="container max-w-2xl text-center">
           <h2 className="text-4xl font-bold mb-6">
-            開始妳的護理之旅
+            加入 Veridian 的信任之旅
           </h2>
-          <p className="text-lg mb-8 text-green-100">
-            選擇適合妳的 Veridian 產品，體驗科學護理與極致舒適。
+          <p className="text-xl text-green-100 mb-8">
+            告別成分焦慮，重新建立與身體的信任關係。
           </p>
-          <Link href="/products">
-            <Button size="lg" variant="secondary">
-              立即購物
-            </Button>
-          </Link>
+          <div className="flex gap-4 justify-center">
+            <Link href="/products">
+              <Button size="lg" variant="secondary">
+                開始購物
+              </Button>
+            </Link>
+            <Link href="/story">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-700">
+                了解更多
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -181,7 +235,7 @@ export default function Home() {
             <div>
               <h4 className="font-bold text-white mb-4">關於 Veridian</h4>
               <p className="text-sm">
-                致力於女性私密保養的科學品牌，守護妳的真實與自信。
+                真實的守護者。以最誠實、透明的方式，守護每一位使用者的身體健康與自信。
               </p>
             </div>
             <div>
@@ -207,7 +261,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; 2025 Veridian. 守護妳的真實。</p>
+            <p>&copy; 2025 Veridian (薇芮迪安). 守護妳的真實。</p>
           </div>
         </div>
       </footer>

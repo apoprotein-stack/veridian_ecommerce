@@ -1,0 +1,8 @@
+{
+  "query": "UPDATE products SET \n  name = 'Veridian Intimate | 私密平衡修護凝露',\n  description = '一款兼具「醫美級專業」與「現代生活美學」的私密處日常保養品。黃金 pH 4.0 平衡配方，維持私密肌膚的天然弱酸性環境，建立健康屏障。富含有機認證蘆薈、積雪草萃取等舒緩成分，溫和修護。採用真空壓瓶設計，質地清爽不黏膩，衛生且能用到最後一滴。',\n  price = 520,\n  details = '核心特色：黃金 pH 4.0 平衡配方 | 翠綠植萃修護力 | The Honest Promise (誠實承諾) | 輕盈水感質地'\nWHERE id = 30001 LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4KZ7fUnndvPR2k8.root --database nneXUHmDme2nniBTgFLSdf --execute UPDATE products SET \n  name = 'Veridian Intimate | 私密平衡修護凝露',\n  description = '一款兼具「醫美級專業」與「現代生活美學」的私密處日常保養品。黃金 pH 4.0 平衡配方，維持私密肌膚的天然弱酸性環境，建立健康屏障。富含有機認證蘆薈、積雪草萃取等舒緩成分，溫和修護。採用真空壓瓶設計，質地清爽不黏膩，衛生且能用到最後一滴。',\n  price = 520,\n  details = '核心特色：黃金 pH 4.0 平衡配方 | 翠綠植萃修護力 | The Honest Promise (誠實承諾) | 輕盈水感質地'\nWHERE id = 30001 LIMIT 1;",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1054 (42S22) at line 1: Unknown column 'details' in 'field list'"
+  ]
+}

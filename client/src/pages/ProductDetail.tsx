@@ -9,6 +9,7 @@ export default function ProductDetail() {
   const [match, params] = useRoute("/products/:id");
   const { isAuthenticated } = useAuth();
   const [quantity, setQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState("150ml");
   const [isAdding, setIsAdding] = useState(false);
 
   const productId = params?.id ? parseInt(params.id) : null;
@@ -18,6 +19,15 @@ export default function ProductDetail() {
   );
 
   const addToCart = trpc.cart.addItem.useMutation();
+
+  // Veridian Intimate 規格定價
+  const sizeOptions = [
+    { size: "50ml", price: 195, label: "隨身組" },
+    { size: "150ml", price: 520, label: "居家組" },
+    { size: "300ml", price: 975, label: "忠實愛護" },
+  ];
+
+  const currentPrice = sizeOptions.find(opt => opt.size === selectedSize)?.price || 520;
 
   const handleAddToCart = async () => {
     if (!isAuthenticated) {
@@ -30,7 +40,7 @@ export default function ProductDetail() {
     setIsAdding(true);
     try {
       await addToCart.mutateAsync({ productId: product.id, quantity });
-      alert("已添加到購物車");
+      alert(`已添加 ${quantity} 件 ${selectedSize} 到購物車`);
       setQuantity(1);
     } catch (error) {
       alert("添加失敗，請重試");
@@ -58,6 +68,8 @@ export default function ProductDetail() {
     );
   }
 
+  const isVeridianIntimate = product.name?.includes("Veridian") && (product.name?.includes("私密") || product.name?.includes("清爽") || product.name?.includes("舒適") || product.name?.includes("溫和") || product.name?.includes("益生") || product.name?.includes("完整"));
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -72,13 +84,19 @@ export default function ProductDetail() {
 
       {/* Product Detail */}
       <main className="py-12 px-4">
-        <div className="container max-w-4xl">
+        <div className="container max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Product Image */}
             <div className="bg-gradient-to-br from-[#e0f7f4] to-[#f0fffe] rounded-lg h-96 flex items-center justify-center overflow-hidden">
               {(product.name?.includes('膠原') || product.name?.includes('蔓越莓')) ? (
                 <img 
                   src={product.name?.includes('膠原') ? "/w-trust-product-1.png" : "/w-trust-product-2.png"}
+                  alt={product.name}
+                  className="w-full h-full object-cover"
+                />
+              ) : isVeridianIntimate ? (
+                <img 
+                  src="/veridian-packaging.png"
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
@@ -96,7 +114,7 @@ export default function ProductDetail() {
                 <h1 className="text-4xl font-bold text-gray-900 mb-2">
                   {product.name}
                 </h1>
-                <p className="text-gray-600 text-lg">
+                <p className="text-gray-600 text-lg leading-relaxed">
                   {product.description}
                 </p>
               </div>
@@ -105,13 +123,39 @@ export default function ProductDetail() {
               <div className="border-t border-b border-gray-200 py-6">
                 <div className="flex items-baseline gap-2 mb-4">
                   <span className="text-4xl font-bold text-primary">
-                    NT${product.price}
+                    NT${currentPrice}
                   </span>
                 </div>
                 <div className={`text-sm font-medium ${product.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
                   {product.stock > 0 ? `庫存: ${product.stock}` : '缺貨'}
                 </div>
               </div>
+
+              {/* Size Selection for Veridian Intimate */}
+              {isVeridianIntimate && (
+                <div className="space-y-4">
+                  <label className="block text-sm font-medium text-gray-700">
+                    選擇規格
+                  </label>
+                  <div className="grid grid-cols-3 gap-3">
+                    {sizeOptions.map((option) => (
+                      <button
+                        key={option.size}
+                        onClick={() => setSelectedSize(option.size)}
+                        className={`p-3 rounded-lg border-2 transition-all ${
+                          selectedSize === option.size
+                            ? 'border-primary bg-primary bg-opacity-10'
+                            : 'border-gray-200 hover:border-primary'
+                        }`}
+                      >
+                        <div className="font-semibold text-gray-900">{option.size}</div>
+                        <div className="text-sm text-gray-600">{option.label}</div>
+                        <div className="text-sm font-bold text-primary">NT${option.price}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Quantity Selector */}
               <div className="space-y-4">
@@ -177,25 +221,66 @@ export default function ProductDetail() {
               {/* Product Benefits */}
               <div className="bg-[#f0fffe] p-6 rounded-lg space-y-3">
                 <h3 className="font-semibold text-gray-900">產品特色</h3>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">✓</span>
-                    <span>天然成分，安心食用</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">✓</span>
-                    <span>科學驗證，效果可靠</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">✓</span>
-                    <span>為銀髮量身打造</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">✓</span>
-                    <span>支持你的活力修復之旅</span>
-                  </li>
-                </ul>
+                {isVeridianIntimate && product.name?.includes("私密") ? (
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>黃金 pH 4.0 平衡配方，維持私密肌膚的天然弱酸性環境</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>翠綠植萃修護力，富含有機認證蘆薈、積雪草萃取</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>The Honest Promise，公開全成分，八大無添加</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>輕盈水感質地，真空壓瓶設計，清爽不黏膩</span>
+                    </li>
+                  </ul>
+                ) : (
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>天然成分，安心食用</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>科學驗證，效果可靠</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>為銀髮量身打造</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">✓</span>
+                      <span>支持你的活力修復之旅</span>
+                    </li>
+                  </ul>
+                )}
               </div>
+
+              {/* The Honest Promise for Veridian Intimate */}
+              {isVeridianIntimate && (
+                <div className="bg-green-50 p-6 rounded-lg space-y-3 border-l-4 border-primary">
+                  <h3 className="font-semibold text-gray-900">The Honest Promise (誠實承諾)</h3>
+                  <p className="text-sm text-gray-700 mb-3">
+                    我們堅持以下八大無添加，確保最安心的私密保養體驗：
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 text-xs text-gray-700">
+                    <div>✓ 無皂鹼</div>
+                    <div>✓ 無酒精</div>
+                    <div>✓ 無 Paraben</div>
+                    <div>✓ 無香精</div>
+                    <div>✓ 無色素</div>
+                    <div>✓ 無激素</div>
+                    <div>✓ 無類固醇</div>
+                    <div>✓ 無重金屬</div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -203,4 +288,3 @@ export default function ProductDetail() {
     </div>
   );
 }
-

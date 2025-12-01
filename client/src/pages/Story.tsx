@@ -159,6 +159,53 @@ export default function Story() {
         </div>
       </section>
 
+      {/* Marketing Campaign - Four Sentences Loop */}
+      <section className="py-16 px-4 bg-gradient-to-r from-pink-50 to-green-50">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl font-bold mb-12 text-gray-900">
+            經期好夥伴 - 四句行銷閉環
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-lg shadow-sm border-l-4 border-pink-500">
+              <h3 className="text-lg font-bold mb-3 text-gray-900">1. 主視覺金句</h3>
+              <p className="text-gray-600 italic">
+                「經期來的時候，給妳最溫柔的呵護」
+              </p>
+              <p className="text-sm text-gray-500 mt-4">
+                情感共鳴、建立連結
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-sm border-l-4 border-green-700">
+              <h3 className="text-lg font-bold mb-3 text-gray-900">2. 數據信任</h3>
+              <p className="text-gray-600 italic">
+                「78% 姐妹說：這次經期，真的沒那麼難熬」
+              </p>
+              <p className="text-sm text-gray-500 mt-4">
+                建立信任、量化效益
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-sm border-l-4 border-blue-500">
+              <h3 className="text-lg font-bold mb-3 text-gray-900">3. 產品閉環</h3>
+              <p className="text-gray-600 italic">
+                「內有活力氣泡飲提神，外有 Veridian 凝露守護，讓經期也水潤有活力」
+              </p>
+              <p className="text-sm text-gray-500 mt-4">
+                強化 AOV、解決方案
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-sm border-l-4 border-purple-500">
+              <h3 className="text-lg font-bold mb-3 text-gray-900">4. 情感收尾</h3>
+              <p className="text-gray-600 italic">
+                「不是治療，是讓妳在經期依然敢好好愛自己」
+              </p>
+              <p className="text-sm text-gray-500 mt-4">
+                價值觀收攏、品牌差異化
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Water-Gel Technology */}
       <section className="py-16 px-4 bg-white">
         <div className="container max-w-4xl">
@@ -197,7 +244,7 @@ export default function Story() {
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/veridian-packaging.png" 
+                src="/VeridianProductPackaging.png" 
                 alt="Veridian 水凝絲滑產品" 
                 className="w-full h-96 object-cover"
               />
@@ -215,7 +262,7 @@ export default function Story() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="rounded-lg overflow-hidden shadow-lg order-2 md:order-1">
               <img 
-                src="/veridian-store.png" 
+                src="/VeridianStoreEnvironment.png" 
                 alt="Veridian 高級品牌空間" 
                 className="w-full h-96 object-cover"
               />

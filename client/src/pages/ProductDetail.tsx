@@ -90,7 +90,7 @@ export default function ProductDetail() {
             <div className="bg-gradient-to-br from-[#e0f7f4] to-[#f0fffe] rounded-lg h-96 flex items-center justify-center overflow-hidden">
               {(product.name?.includes('膠原') || product.name?.includes('蔓越莓')) ? (
                 <img 
-                  src={product.name?.includes('膠原') ? "/w-trust-product-1.png" : "/w-trust-product-2.png"}
+                  src={product.name?.includes('膠原') ? "https://files.manuscdn.com/user_upload_by_module/session_file/310519663103483326/MoFgMHVhInrAnNFy.png" : "https://files.manuscdn.com/user_upload_by_module/session_file/310519663103483326/LzYqozPAMSzIrMWL.png"}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />

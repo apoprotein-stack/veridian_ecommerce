@@ -1,8 +1,7 @@
-import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Heart, Leaf, Sparkles } from "lucide-react";
+import { ShoppingCart, Leaf, Zap, Heart, Brain, Droplets, Sparkles } from "lucide-react";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { getLoginUrl } from "@/const";
+import { Link } from "wouter";
 
 export default function Home() {
   const { isAuthenticated } = useAuth();
@@ -30,37 +29,42 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section - Marketing Campaign */}
-      <section className="py-20 px-4 bg-gradient-to-br from-pink-50 via-white to-green-50">
+      {/* Hero Section - Mitochondrial Health Narrative */}
+      <section className="py-20 px-4 bg-gradient-to-br from-green-50 via-white to-blue-50">
         <div className="container max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
+              <div className="mb-6">
+                <span className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+                  粒線體健康 × 雙軸線守護
+                </span>
+              </div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                經期來的時候，給妳最溫柔的呵護
+                用透明的科學，從細胞粒線體重啟健康
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                78% 姐妹說：這次經期，真的沒那麼難熬
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed font-medium">
+                不用誇張話術，不仰賴明星光環。讓產品本身被親身體驗所驗證。
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                內有活力氣泡飲提神，外有 Veridian 凝露守護，讓經期也水潤有活力。不是治療，是讓妳在經期依然敢好好愛自己。
+                Veridian 以粒線體健康為科學框架，透過 ProFit® 後生元與 MDBD® 遞送技術，同時修復腸腦軸線（睡眠、壓力、免疫）與腸皮軸線（皮膚屏障、膚況、抗老），實現 35 天內外協同見效。
               </p>
               <div className="flex gap-4">
                 <Link href="/products">
                   <Button size="lg" className="bg-green-700 hover:bg-green-800">
-                    探索經期好夥伴
+                    探索產品矩陣
                   </Button>
                 </Link>
                 <Link href="/story">
                   <Button size="lg" variant="outline">
-                    了解更多
+                    了解科學基礎
                   </Button>
                 </Link>
               </div>
             </div>
             <div className="rounded-lg overflow-hidden shadow-2xl">
               <img 
-                src="/Gemini_Generated_Image_wcth9vwcth9vwcth.png" 
-                alt="蔓越莓風味活力氣泡飲" 
+                src="/VeridianProductPackaging.png" 
+                alt="Veridian 核心產品線" 
                 className="w-full h-96 object-cover"
               />
             </div>
@@ -68,310 +72,356 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Brand Tagline */}
+      {/* Brand Core - Verde + Veritas */}
       <section className="py-16 px-4 bg-green-700 text-white">
         <div className="container max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Veridian: Guarding Your Truth
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Veridian = Verde（生命）+ Veritas（真實）
           </h2>
-          <p className="text-xl text-green-100">
-            Veridian: 守護妳的真實
+          <p className="text-xl text-green-100 mb-6">
+            在充斥代言與保證的保健品市場，我們選擇另一條路
+          </p>
+          <p className="text-lg text-green-100">
+            透明的科學 × 溫暖的語言 = 60% 科學 + 40% 溫度
           </p>
         </div>
       </section>
 
-      {/* Fundraising Campaign Section */}
+      {/* Five-Step Logic Chain - Mitochondrial Health */}
       <section className="py-20 px-4 bg-white">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-bold text-center mb-6 text-gray-900">
-            經期好夥伴 - 募資方案
+          <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
+            粒線體健康的五步驟邏輯鏈
           </h2>
           <p className="text-center text-gray-600 text-lg mb-16">
-            選擇最適合妳的方案，開始內外雙守護的旅程
+            從腸道到細胞，從根源啟動全身健康
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Plan 1 */}
-            <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-bold mb-2 text-gray-900">【成本價衝量】</h3>
-              <p className="text-gray-600 mb-4">單入組</p>
-              <p className="text-4xl font-bold text-green-700 mb-6">NT$599</p>
-              <ul className="space-y-3 mb-8 text-gray-600">
-                <li className="flex items-start gap-2">
-                  <span className="text-green-700 font-bold">✓</span>
-                  <span>私密凝露 50ml</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-700 font-bold">✓</span>
-                  <span>成本價優惠</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-green-700 hover:bg-green-800">加入購物車</Button>
-            </div>
-
-            {/* Plan 2 */}
-            <div className="border-2 border-green-700 rounded-lg p-8 shadow-lg relative">
-              <div className="absolute -top-4 left-6 bg-green-700 text-white px-4 py-1 rounded-full text-sm font-bold">
-                推薦
+          
+          <div className="space-y-6">
+            {/* Step 1 */}
+            <div className="flex gap-6 items-start">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-green-100 text-green-700 font-bold text-lg">
+                  1
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-2 text-gray-900">【經期好夥伴】</h3>
-              <p className="text-gray-600 mb-4">標準組</p>
-              <p className="text-4xl font-bold text-green-700 mb-6">NT$1,299</p>
-              <ul className="space-y-3 mb-8 text-gray-600">
-                <li className="flex items-start gap-2">
-                  <span className="text-green-700 font-bold">✓</span>
-                  <span>私密凝露 150ml</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-700 font-bold">✓</span>
-                  <span>蔓越莓風味活力氣泡飲</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-700 font-bold">✓</span>
-                  <span>內外雙守護完整方案</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-green-700 hover:bg-green-800">加入購物車</Button>
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">調節腸道菌叢</h3>
+                <p className="text-gray-600 mb-3">
+                  ProFit® 後生元 → 修復腸道屏障 → 減少腸道慢性發炎
+                </p>
+                <p className="text-sm text-gray-500">
+                  後生元是益生菌代謝後的生物活性產物，穩定性高、作用可預測、不受胃酸破壞
+                </p>
+              </div>
             </div>
 
-            {/* Plan 3 */}
-            <div className="border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-bold mb-2 text-gray-900">【78%見證】</h3>
-              <p className="text-gray-600 mb-4">經期輕盈 ALL IN 組</p>
-              <p className="text-4xl font-bold text-green-700 mb-6">NT$1,999</p>
-              <ul className="space-y-3 mb-8 text-gray-600">
-                <li className="flex items-start gap-2">
-                  <span className="text-green-700 font-bold">✓</span>
-                  <span>私密凝露 300ml</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-700 font-bold">✓</span>
-                  <span>蔓越莓活力氣泡飲 2盒</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-700 font-bold">✓</span>
-                  <span>完整護理套組</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-green-700 hover:bg-green-800">加入購物車</Button>
+            {/* Step 2 */}
+            <div className="flex gap-6 items-start">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-700 font-bold text-lg">
+                  2
+                </div>
+              </div>
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">提升營養吸收效率</h3>
+                <p className="text-gray-600 mb-3">
+                  腸道屏障健全 → 脂溶性維生素、礦物質吸收率提升 → 細胞獲得充足代謝原料
+                </p>
+                <p className="text-sm text-gray-500">
+                  MDBD® 遞送技術將吸收率從 25-35% 提升至 58-65%
+                </p>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="flex gap-6 items-start">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-yellow-100 text-yellow-700 font-bold text-lg">
+                  3
+                </div>
+              </div>
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">支持粒線體功能</h3>
+                <p className="text-gray-600 mb-3">
+                  充足原料 → 粒線體 ATP 生成效率提升 → 細胞能量充沛，氧化壓力降低
+                </p>
+                <p className="text-sm text-gray-500">
+                  粒線體是細胞的能量工廠，負責將養分轉化為 ATP，供細胞執行所有生理功能
+                </p>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="flex gap-6 items-start">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-pink-100 text-pink-700 font-bold text-lg">
+                  4
+                </div>
+              </div>
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">啟動軸線修復</h3>
+                <div className="space-y-3">
+                  <div>
+                    <p className="font-semibold text-gray-900">腸腦軸線：</p>
+                    <p className="text-gray-600 text-sm">粒線體健康 → 腸道神經系統優化 → 血清素前驅物供應充足 → 睡眠/情緒/免疫改善</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">腸皮軸線：</p>
+                    <p className="text-gray-600 text-sm">粒線體健康 → 皮膚幹細胞更新能力提升 → 膠原蛋白合成加速 → 屏障修復/膚況改善</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 5 */}
+            <div className="flex gap-6 items-start">
+              <div className="flex-shrink-0">
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-green-100 text-green-700 font-bold text-lg">
+                  5
+                </div>
+              </div>
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">整體感知改善</h3>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <p><span className="font-semibold">D7-D14：</span> 腸胃通暢感、膚感初步變化（可感知）</p>
+                  <p><span className="font-semibold">D30：</span> 睡眠品質、精力、皮膚均勻度（可觀察）</p>
+                  <p><span className="font-semibold">D56（單內服）/ D35（內外協同）：</span> 整體指標達標</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Witness Section - 78% Trust Data */}
-      <section className="py-20 px-4 bg-gradient-to-r from-pink-50 to-green-50">
-        <div className="container max-w-4xl">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
-            78% 姐妹的真實見證
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg p-8 shadow-lg text-center">
-              <p className="text-5xl font-bold text-green-700 mb-4">78%</p>
-              <p className="text-gray-600 text-lg">
-                姐妹說：這次經期，真的沒那麼難熬
-              </p>
-            </div>
-            <div className="bg-white rounded-lg p-8 shadow-lg text-center">
-              <p className="text-5xl font-bold text-green-700 mb-4">92%</p>
-              <p className="text-gray-600 text-lg">
-                使用者推薦給親友
-              </p>
-            </div>
-            <div className="bg-white rounded-lg p-8 shadow-lg text-center">
-              <p className="text-5xl font-bold text-green-700 mb-4">4.9/5</p>
-              <p className="text-gray-600 text-lg">
-                平均滿意度評分
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Brand Philosophy */}
-      <section className="py-20 px-4 bg-white">
-        <div className="container max-w-4xl">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
-            Veridian 的核心價值
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart className="w-8 h-8 text-green-700" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">真實的守護者</h3>
-              <p className="text-gray-600">
-                我們的核心使命，是以最誠實、透明的方式，守護每一位使用者的身體健康與自信。
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Leaf className="w-8 h-8 text-green-700" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">翠綠生命力</h3>
-              <p className="text-gray-600">
-                名字發音同 "Viridian" (翠綠色)，象徵品牌源於自然、純淨、充滿生命力的產品哲學。
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Sparkles className="w-8 h-8 text-green-700" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">透明的承諾</h3>
-              <p className="text-gray-600">
-                沒有成分需要隱藏，因為真正的信任，始於完全的透明。我們邀請您，一起告別成分焦慮。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Brand Applications */}
+      {/* Dual Axis Product Strategy */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
-            Veridian 品牌應用
+          <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
+            雙軸線聚焦發展
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src="/VeridianProductPackagingCollection.png" 
-                alt="Veridian 完整產品線" 
-                className="w-full h-96 object-cover"
-              />
-              <div className="p-6 bg-white">
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">完整產品線</h3>
-                <p className="text-gray-600">
-                  從清潔、精華到乳霜，Veridian 提供全方位的私密保養方案，每一款產品都經過科學驗證。
-                </p>
+          <p className="text-center text-gray-600 text-lg mb-16">
+            不做泛健康、不做全品類。清晰的產品線，完整的解決方案
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* GB Series */}
+            <div className="bg-white rounded-lg p-8 shadow-sm border-l-4 border-blue-500">
+              <div className="flex items-center gap-3 mb-6">
+                <Brain className="w-8 h-8 text-blue-600" />
+                <h3 className="text-2xl font-bold text-gray-900">GB 系列 - 腸腦軸線</h3>
               </div>
+              <p className="text-gray-600 mb-6">
+                針對睡眠障礙、長期壓力、免疫力偏低的 25-45 歲都市工作者
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold">•</span>
+                  <div>
+                    <p className="font-semibold text-gray-900">GB-01N 腸淨能®</p>
+                    <p className="text-sm text-gray-600">腸道環境重建、整體健康基礎</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold">•</span>
+                  <div>
+                    <p className="font-semibold text-gray-900">GB-02N 強益免®</p>
+                    <p className="text-sm text-gray-600">腸道免疫強化、反覆感冒調理</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold">•</span>
+                  <div>
+                    <p className="font-semibold text-gray-900">GB-03N 好眠寧®</p>
+                    <p className="text-sm text-gray-600">腸腦軸訊號優化、睡眠品質改善</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold">•</span>
+                  <div>
+                    <p className="font-semibold text-gray-900">GB-04N 舒壓靈®</p>
+                    <p className="text-sm text-gray-600">腸道血清素支持、壓力情緒調節</p>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src="/VeridianStoreEnvironment.png" 
-                alt="Veridian 高級品牌空間" 
-                className="w-full h-96 object-cover"
-              />
-              <div className="p-6 bg-white">
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">高級品牌空間</h3>
-                <p className="text-gray-600">
-                  隱密、優雅、專業的購物環境。我們創造了一個讓女性感到舒適、被尊重的零售空間。
-                </p>
+
+            {/* GS Series */}
+            <div className="bg-white rounded-lg p-8 shadow-sm border-l-4 border-pink-500">
+              <div className="flex items-center gap-3 mb-6">
+                <Sparkles className="w-8 h-8 text-pink-600" />
+                <h3 className="text-2xl font-bold text-gray-900">GS 系列 - 腸皮軸線</h3>
               </div>
+              <p className="text-gray-600 mb-6">
+                針對皮膚問題、開放「吃出美肌」概念的 28-42 歲女性
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-pink-600 font-bold">•</span>
+                  <div>
+                    <p className="font-semibold text-gray-900">GS-01N 晶妍膠原®</p>
+                    <p className="text-sm text-gray-600">腸皮軸啟動、膠原蛋白合成支持</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-pink-600 font-bold">•</span>
+                  <div>
+                    <p className="font-semibold text-gray-900">GS-01C 晶妍精華®</p>
+                    <p className="text-sm text-gray-600">皮膚屏障修護、抗氧化（外用）</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-pink-600 font-bold">•</span>
+                  <div>
+                    <p className="font-semibold text-gray-900">GS-03N/C 私淨源/護®</p>
+                    <p className="text-sm text-gray-600">私密菌相平衡、內外雙軌護理</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-pink-600 font-bold">•</span>
+                  <div>
+                    <p className="font-semibold text-gray-900">GS-02C 煥妍修護®</p>
+                    <p className="text-sm text-gray-600">抗老化、夜間修護（外用）</p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Product Showcase */}
+      {/* Inner-Outer Synergy */}
       <section className="py-20 px-4 bg-white">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
-            水凝絲滑科技
+          <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
+            內外協同 = 35 天見效
           </h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src="/VeridianProductPackaging.png" 
-                alt="Veridian 水凝絲滑產品" 
-                className="w-full h-96 object-cover"
-              />
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold mb-6 text-gray-900">
-                極致輕盈的護理體驗
-              </h3>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Veridian 的核心創新是「水凝絲滑」劑型。這不是簡單的營銷詞彙，而是經過多年研發的結果。
+          <p className="text-center text-gray-600 text-lg mb-16">
+            口服修復根源，外用加速效果
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="mb-4 flex justify-center">
+                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+                  <Droplets className="w-8 h-8 text-blue-600" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">口服產品</h3>
+              <p className="text-gray-600">
+                作用於腸道，從根源改善腸皮軸的訊號傳遞，提升皮膚細胞的自我修復能力
               </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3">
-                  <span className="text-green-700 font-bold text-xl">✓</span>
-                  <span className="text-gray-600">專屬 pH 值配方，符合女性私密肌膚的自然環境</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-700 font-bold text-xl">✓</span>
-                  <span className="text-gray-600">玻尿酸與益生元，提供深層保濕與微生物平衡</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-700 font-bold text-xl">✓</span>
-                  <span className="text-gray-600">輕盈質地，無黏膩感，快速吸收</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-green-700 font-bold text-xl">✓</span>
-                  <span className="text-gray-600">天然成分，無激素、無類固醇</span>
-                </li>
-              </ul>
-              <Link href="/products">
-                <Button size="lg" className="bg-green-700 hover:bg-green-800">
-                  探索所有商品
-                </Button>
-              </Link>
             </div>
+
+            <div className="text-center">
+              <div className="mb-4 flex justify-center">
+                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                  <Zap className="w-8 h-8 text-green-600" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">協同效應</h3>
+              <p className="text-gray-600">
+                兩者協同時，修復能力與外用支持形成互補，感知改善時間從 56 天縮短至 35 天
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="mb-4 flex justify-center">
+                <div className="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center">
+                  <Heart className="w-8 h-8 text-pink-600" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">外用產品</h3>
+              <p className="text-gray-600">
+                直接在皮膚層提供屏障修護支持，加速細胞更新的外部條件
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing & Market Position */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container max-w-5xl">
+          <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
+            中高價 × 高科學親近性
+          </h2>
+          <p className="text-center text-gray-600 text-lg mb-16">
+            定價 $1,680-$2,280/月，為有科學依據的保健品付費
+          </p>
+
+          <div className="bg-white rounded-lg p-8 shadow-sm mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">為什麼 GS-01N 定價 $2,100？</h3>
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-green-100 text-green-700 font-bold">
+                    1
+                  </div>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900 mb-2">根源修復 vs 材料補充</p>
+                  <p className="text-gray-600">
+                    GS-01N 包含 ProFit® 後生元成分，修復腸皮軸的根本機制（腸道 → 皮膚），不只是補充膠原蛋白原料
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-green-100 text-green-700 font-bold">
+                    2
+                  </div>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900 mb-2">吸收率差異</p>
+                  <p className="text-gray-600">
+                    MDBD® 遞送技術將腸道吸收率從一般膠囊的 25-35% 提升至 58-65%，有效成分利用率差距顯著
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-green-100 text-green-700 font-bold">
+                    3
+                  </div>
+                </div>
+                <div>
+                  <p className="font-semibold text-gray-900 mb-2">見效時間縮短</p>
+                  <p className="text-gray-600">
+                    搭配 GS-01C 外用時，見效時間從單一口服的 56 天縮短至 35 天，每個見效天數的成本實際上更低
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-green-50 border border-green-200 rounded-lg p-8">
+            <p className="text-gray-900 font-semibold mb-2">
+              💡 溝通策略：不是「比 DHC 貴 4 倍」，而是「DHC 只補材料，Veridian 修根源」
+            </p>
+            <p className="text-gray-600">
+              換一個比較框架，同時說明為何同等投入可以預期更高的感知回報
+            </p>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 bg-gradient-to-r from-green-700 to-green-800 text-white">
-        <div className="container max-w-2xl text-center">
+      <section className="py-20 px-4 bg-green-700 text-white">
+        <div className="container max-w-4xl text-center">
           <h2 className="text-4xl font-bold mb-6">
-            不是治療，是讓妳在經期依然敢好好愛自己
+            試用先行，科學驗證
           </h2>
           <p className="text-xl text-green-100 mb-8">
-            加入 Veridian 的信任之旅，開始內外雙守護
+            $60 運費取得市值 $380 的雙軸體驗組，親身感受粒線體健康的改變
           </p>
-          <div className="flex gap-4 justify-center">
-            <Link href="/products">
-              <Button size="lg" variant="secondary">
-                開始購物
-              </Button>
-            </Link>
-            <Link href="/story">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-700">
-                了解更多
-              </Button>
-            </Link>
-          </div>
+          <Link href="/products">
+            <Button size="lg" className="bg-white text-green-700 hover:bg-gray-100">
+              開始試用
+            </Button>
+          </Link>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12 px-4">
-        <div className="container max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h4 className="font-bold text-white mb-4">關於 Veridian</h4>
-              <p className="text-sm">
-                真實的守護者。以最誠實、透明的方式，守護每一位使用者的身體健康與自信。
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-4">購物</h4>
-              <ul className="text-sm space-y-2">
-                <li><Link href="/products" className="hover:text-white">所有商品</Link></li>
-                <li><Link href="/products" className="hover:text-white">經期好夥伴</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-4">品牌</h4>
-              <ul className="text-sm space-y-2">
-                <li><Link href="/story" className="hover:text-white">品牌故事</Link></li>
-                <li><Link href="/story" className="hover:text-white">品牌理念</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-4">法律</h4>
-              <ul className="text-sm space-y-2">
-                <li><a href="#" className="hover:text-white">隱私政策</a></li>
-                <li><a href="#" className="hover:text-white">服務條款</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8 text-center text-sm">
-            <p>&copy; 2025 Veridian (薇芮迪安). 守護妳的真實。</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

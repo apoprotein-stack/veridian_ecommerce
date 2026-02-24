@@ -11,12 +11,14 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import SilverTrustAssessment from "./pages/SilverTrustAssessment";
+import BrandStory from "./pages/BrandStory";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/story"} component={Story} />
+      <Route path={"/brand-story"} component={BrandStory} />
       <Route path={"/silver-trust-assessment"} component={SilverTrustAssessment} />
       <Route path={"/products/:id"} component={ProductDetail} />
       <Route path={"/products"} component={Products} />

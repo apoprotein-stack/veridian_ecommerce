@@ -1,8 +1,46 @@
-- name: Install & Build
+name: Deploy Veridian Ecommerce
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install & Build
         run: |
-          echo "--- 當前所在目錄 ---"
-          pwd
-          echo "--- 根目錄檔案清單 ---"
+          echo "--- 當前目錄內容 ---"
           ls -F
-          # 先註釋掉原本會報錯的指令
-          # npm install --legacy-peer-deps
+          npm install --legacy-peer-deps
+          npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # 如果 build 完出現 dist 資料夾就填 ./dist
+          # 如果是 Next.js 出現 out 資料夾就填 ./out
+          # 我們先預設為 ./out
+          path: ./out 
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

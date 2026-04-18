@@ -31,10 +31,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # 如果 build 完出現 dist 資料夾就填 ./dist
-          # 如果是 Next.js 出現 out 資料夾就填 ./out
-          # 我們先預設為 ./out
-          path: ./out 
+          # 將原本的 ./out 修改為 ./dist
+          path: ./dist
 
   deploy:
     needs: build

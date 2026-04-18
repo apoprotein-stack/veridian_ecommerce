@@ -23,15 +23,13 @@ jobs:
 
       - name: Install & Build
         run: |
-          echo "--- 當前目錄內容 ---"
-          ls -F
           npm install --legacy-peer-deps
           npm run build
 
-- name: Upload artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # 將這裡從 ./out 修改為 ./dist
+          # 已修改為 ./dist 並確保縮排正確
           path: ./dist
 
   deploy:

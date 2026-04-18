@@ -1,45 +1,8 @@
-name: Deploy Veridian Ecommerce
-
-on:
-  push:
-    branches: ["main"]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          # 暫時移除 cache 設定，避開找不到 lock 檔的錯誤
-
-      - name: Install & Build
-        # 【重點】這裡指定進入內層的 veridian_ecommerce 資料夾執行指令
-        working-directory: ./veridian_ecommerce 
+- name: Install & Build
         run: |
-          npm install --legacy-peer-deps
-          npm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # 【重點】指向內層資料夾產出的 out 目錄
-          path: ./veridian_ecommerce/out 
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+          echo "--- 當前所在目錄 ---"
+          pwd
+          echo "--- 根目錄檔案清單 ---"
+          ls -F
+          # 先註釋掉原本會報錯的指令
+          # npm install --legacy-peer-deps

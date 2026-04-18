@@ -2,7 +2,7 @@ name: Deploy Veridian Ecommerce
 
 on:
   push:
-    branches: ["main"] # 確保您的主分支名稱是 main
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -20,8 +20,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+          # 暫時移除 cache 設定，避開找不到 lock 檔的錯誤
 
       - name: Install & Build
+        # 【重點】這裡指定進入內層的 veridian_ecommerce 資料夾執行指令
+        working-directory: ./veridian_ecommerce 
         run: |
           npm install --legacy-peer-deps
           npm run build
@@ -29,9 +32,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Next.js 靜態導出預設資料夾是 out
-          # 如果您的編譯指令產生的是 dist，請改為 ./dist
-          path: ./out 
+          # 【重點】指向內層資料夾產出的 out 目錄
+          path: ./veridian_ecommerce/out 
 
   deploy:
     needs: build
